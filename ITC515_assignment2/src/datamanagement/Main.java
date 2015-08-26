@@ -1,4 +1,4 @@
 package datamanagement;
 
 public class Main {
-    public static void main(String[] p) {new AppCTL().execute();}    }
+    public static void main(String[] p) {new CheckGradeCTL().execute();}    }

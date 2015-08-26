@@ -3,7 +3,7 @@ package datamanagement;
 public class UnitProxy implements IUnit {
 	private String unitCode;
     private String unitName;    
-    UnitManager   unitManager;
+    UnitManager unitManager;
 
     public UnitProxy (String unitCode, String unitName) {
         this.unitCode = unitCode;
@@ -42,7 +42,7 @@ public class UnitProxy implements IUnit {
     public float getDiCuttoff() {
     	return unitManager.getUnit(unitCode).getDiCuttoff();
     }
-    public void setHdCutoff(float cutoff) {
+    public void setHdCutoff (float cutoff) {
     	unitManager.getUnit(unitCode).setHdCutoff(cutoff);
     }
     
@@ -50,7 +50,7 @@ public class UnitProxy implements IUnit {
     	return unitManager.getUnit(unitCode).getHdCutoff();
     }
     
-    public void setAeCutoff(float cutoff) {
+    public void setAeCutoff (float cutoff) {
     	unitManager.getUnit(unitCode).setAeCutoff(cutoff);
     }
     
@@ -58,16 +58,16 @@ public class UnitProxy implements IUnit {
     	return unitManager.getUnit(unitCode).getAeCutoff();
     }
 
-    public String getGrade(float f1, float f2, float f3) {	
-    	return unitManager.getUnit(unitCode).getGrade(f1, f2, f3);
+    public String getGrade (float asg1, float asg2, float exam) {	
+    	return unitManager.getUnit(unitCode).getGrade(asg1, asg2, exam);
     }
     
-    public void addStudentRecord(IStudentUnitRecord record) { 
+    public void addStudentRecord (IStudentUnitRecord record) { 
     	unitManager.getUnit(unitCode).addStudentRecord(record);
     }
     
-    public IStudentUnitRecord getStudentRecord(int s) {
-    	return unitManager.getUnit(unitCode).getStudentRecord(s);
+    public IStudentUnitRecord getStudentRecord (int student) {
+    	return unitManager.getUnit(unitCode).getStudentRecord(student);
     }
     
     public StudentUnitRecordList listStudentRecords() {
@@ -86,7 +86,7 @@ public class UnitProxy implements IUnit {
     	return unitManager.getUnit(unitCode).getExamWeight();
     }
     
-    public void setAssessmentWeights(int asg1Wgt, int asg2Wgt, int examWgt) {
+    public void setAssessmentWeights (int asg1Wgt, int asg2Wgt, int examWgt) {
     	unitManager.getUnit(unitCode).setAssessmentWeights(asg1Wgt, asg2Wgt, examWgt);
 	}
 }

@@ -4,9 +4,9 @@ public class StudentUnitRecordProxy implements IStudentUnitRecord {
 	private String unitCode;
 	private StudentUnitRecordManager manager;
 	
-	public StudentUnitRecordProxy (Integer id, String code) {
-		this.studentID = id;
-		this.unitCode = code;
+	public StudentUnitRecordProxy (Integer studentId, String unitCode) {
+		this.studentID = studentId;
+		this.unitCode = unitCode;
 		this.manager = StudentUnitRecordManager.instance();
 	}
 	
@@ -18,7 +18,7 @@ public class StudentUnitRecordProxy implements IStudentUnitRecord {
 		return unitCode; 
 	}
 
-	public void setAsg1(float mark) {
+	public void setAsg1 (float mark) {
 		manager.getStudentUnitRecord (studentID, unitCode).setAsg1(mark);
 	}
 	
@@ -26,7 +26,7 @@ public class StudentUnitRecordProxy implements IStudentUnitRecord {
 		return manager.getStudentUnitRecord (studentID, unitCode).getAsg1();
 	}
 	
-	public void setAsg2(float mark) { 
+	public void setAsg2 (float mark) { 
 		manager.getStudentUnitRecord (studentID, unitCode).setAsg2(mark);
 	}
 
@@ -34,7 +34,7 @@ public class StudentUnitRecordProxy implements IStudentUnitRecord {
 		return manager.getStudentUnitRecord (studentID, unitCode).getAsg2();
 	}
 
-	public void setExam(float mark) {
+	public void setExam (float mark) {
 		manager.getStudentUnitRecord (studentID, unitCode).setExam(mark);
 	}
 

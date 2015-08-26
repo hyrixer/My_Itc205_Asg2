@@ -8,18 +8,18 @@ import java.awt.Color;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-public class AppUI extends javax.swing.JFrame implements IUnitLister,
+public class CheckGradeUI extends javax.swing.JFrame implements IUnitLister,
 		IStudentLister {
-	private AppCTL control;
+	private CheckGradeCTL control;
 	private javax.swing.DefaultComboBoxModel box1;
 	private javax.swing.DefaultComboBoxModel box2;
-	float float1;
-	float float2;
-	float float3;
+	float asg1;
+	float asg2;
+	float exam;
 	Integer studentId;
 
-	public AppUI(AppCTL appCtl) {
-		this.control = appCtl;
+	public CheckGradeUI(CheckGradeCTL checkGradeCtl) {
+		this.control = checkGradeCtl;
 		box1 = new javax.swing.DefaultComboBoxModel(new String[0]);
 		box2 = new javax.swing.DefaultComboBoxModel(new String[0]);
 		initComponents();
@@ -301,39 +301,39 @@ public class AppUI extends javax.swing.JFrame implements IUnitLister,
 	}// </editor-fold>//GEN-END:initComponents
 
 	private void jComboBox1ItemStateChanged(java.awt.event.ItemEvent evt) {// GEN-FIRST:event_jComboBox1ItemStateChanged
-		String cU = (String) jComboBox1.getSelectedItem();
+		String changeUnit = (String) jComboBox1.getSelectedItem();
 		Refresh3();
 		clearStudents();
 		if (evt.getStateChange() == java.awt.event.ItemEvent.SELECTED) {
-			if (cU.equals((String) jComboBox1.getItemAt(0))) {
-				cU = "NONE";
+			if (changeUnit.equals((String) jComboBox1.getItemAt(0))) {
+				changeUnit = "NONE";
 			}
-			control.unitSelected(cU);
+			control.unitSelected(changeUnit);
 		}
 	}// GEN-LAST:event_jComboBox1ItemStateChanged
 
 	private void jComboBox2ItemStateChanged(java.awt.event.ItemEvent evt) {// GEN-FIRST:event_jComboBox2ItemStateChanged
 		Refresh3();
-		String cS = (String) jComboBox2.getSelectedItem();
+		String changeStudent = (String) jComboBox2.getSelectedItem();
 		if (evt.getStateChange() == java.awt.event.ItemEvent.SELECTED) {
-			if (cS.equals((String) jComboBox2.getItemAt(0))) {
+			if (changeStudent.equals((String) jComboBox2.getItemAt(0))) {
 				studentId = new Integer(0);
 				control.studentSelected(studentId);
 			} else {
-				studentId = new Integer(cS.split("\\s")[0]);
+				studentId = new Integer(changeStudent.split("\\s")[0]);
 			}
 			control.studentSelected(studentId);
 		}
 	}// GEN-LAST:event_jComboBox2ItemStateChanged
 
 	private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton3ActionPerformed
-		float1 = new Float(jTextField1.getText()).floatValue();
-		float2 = new Float(jTextField2.getText()).floatValue();
-		float3 = new Float(jTextField3.getText()).floatValue();
+		asg1 = new Float(jTextField1.getText()).floatValue();
+		asg2 = new Float(jTextField2.getText()).floatValue();
+		exam = new Float(jTextField3.getText()).floatValue();
 		//lblErrMsg.setText("");
 		try {
-			String s = control.checkGrade(float1, float2, float3);
-			jLabel5.setText(s);
+			String grade = control.checkGrade(asg1, asg2, exam);
+			jLabel5.setText(grade);
 		}
 		catch (RuntimeException re) {
 			jlabel6.setText(re.getMessage());
