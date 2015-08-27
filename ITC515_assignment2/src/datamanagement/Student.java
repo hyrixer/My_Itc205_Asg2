@@ -21,7 +21,7 @@ public class Student implements IStudent {
     	return firstName; 
     }
 
-    public void setFirstName (String firstName ) { 
+    public void setFirstName (String firstName) { 
     	this.firstName = firstName; 
     }
 
@@ -37,7 +37,7 @@ public class Student implements IStudent {
     	recordList.add(record); 
     }
         
-    public IStudentUnitRecord getUnitRecord (String unitCode ) {
+    public IStudentUnitRecord getUnitRecord (String unitCode) {
     	for (IStudentUnitRecord r : recordList)  
             if (r.getUnitCode().equals(unitCode)) 
             	return r; 

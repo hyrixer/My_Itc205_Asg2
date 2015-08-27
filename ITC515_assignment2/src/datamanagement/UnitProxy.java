@@ -19,8 +19,8 @@ public class UnitProxy implements IUnit {
         return this.unitName; 
     }
     
-    public void setPsCutoff1 (float cutoff) {  //update according to changes
-        unitManager.getUnit(unitCode).setPsCutoff1(cutoff);
+    public void setPsCutoff (float cutoff) {  //update according to changes
+        unitManager.getUnit(unitCode).setPsCutoff(cutoff);
     }
     
     public float getPsCutoff() {
@@ -39,8 +39,8 @@ public class UnitProxy implements IUnit {
     	unitManager.getUnit(unitCode).setDiCutoff(cutoff);
     }
     
-    public float getDiCuttoff() {
-    	return unitManager.getUnit(unitCode).getDiCuttoff();
+    public float getDiCutoff() {
+    	return unitManager.getUnit(unitCode).getDiCutoff();
     }
     public void setHdCutoff (float cutoff) {
     	unitManager.getUnit(unitCode).setHdCutoff(cutoff);
